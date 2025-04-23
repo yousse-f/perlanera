@@ -1,0 +1,118 @@
+/* 
+   Perla Nera - Fix per eliminare lo scroll orizzontale su mobile
+   Aprile 2025
+*/
+
+/* Previene scroll orizzontale su tutti i dispositivi */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
+/* =============== OTTIMIZZAZIONI SPECIFICHE PER MOBILE =============== */
+@media (max-width: 768px) {
+    /* Contenitori principali - previene overflow */
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        box-sizing: border-box;
+    }
+    
+    /* Risolve problemi di header che causa overflow */
+    header {
+        width: 100vw; /* Usa viewport width invece di percentuale */
+        max-width: 100%;
+        left: 0;
+        right: 0;
+    }
+    
+    nav {
+        width: 100%;
+        padding: 10px 15px;
+        justify-content: space-between;
+    }
+    
+    /* Sistema dimensione logo e nome brand */
+    .logo {
+        max-width: 75%;
+        min-width: 0; /* Permette al contenitore di restringersi se necessario */
+    }
+    
+    .logo a {
+        display: flex;
+        align-items: center;
+        max-width: 100%;
+    }
+    
+    .logo img {
+        max-height: 50px;
+        max-width: 50px;
+        width: auto;
+        object-fit: contain;
+    }
+    
+    .brand-text {
+        font-size: 1.2rem;
+        margin-left: 8px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    
+    /* Corregge posizionamento menu toggle hamburger */
+    .menu-toggle {
+        position: relative;
+        margin-right: 0;
+        flex-shrink: 0; /* Impedisce al toggle di ridursi */
+        z-index: 1001;
+    }
+    
+    /* Assicura che il menu dropdown mobile non causi overflow */
+    .nav-links {
+        width: 100vw;
+        margin: 0;
+        padding: 20px 0;
+        box-sizing: border-box;
+        left: 0;
+        right: 0;
+    }
+    
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        margin: 8px 0;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+    
+    .nav-links a {
+        display: inline-block;
+        width: auto;
+        padding: 10px 15px;
+    }
+}
+
+/* Ottimizzazioni extra per schermi molto piccoli */
+@media (max-width: 375px) {
+    .logo img {
+        max-height: 40px;
+        max-width: 40px;
+    }
+    
+    .brand-text {
+        font-size: 1rem;
+        margin-left: 5px;
+    }
+    
+    nav {
+        padding: 8px 12px;
+    }
+    
+    .menu-toggle {
+        width: 25px;
+        height: 18px;
+    }
+}

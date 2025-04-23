@@ -1,0 +1,528 @@
+/* 
+   Perla Nera - Ottimizzazioni UI/UX per la pagina Chi Siamo
+   Aprile 2025
+*/
+
+/* ========== MIGLIORAMENTI STRUTTURA GENERALE ========== */
+.page-section {
+  padding: 100px 0;
+}
+
+.section-title {
+  margin-bottom: 25px;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  letter-spacing: -0.5px;
+  color: var(--gold);
+}
+
+.gold-divider {
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold) 30%, var(--gold) 70%, transparent);
+  margin: 0 auto 60px;
+}
+
+/* Layout semplificato - senza immagini */
+.about-content-simplified {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+    "story vision"
+    "values values";
+  gap: 50px;
+  margin: 50px 0;
+  align-items: start;
+}
+
+/* Posizionamento elementi */
+.about-story {
+  grid-area: story;
+}
+
+.about-vision-mission {
+  grid-area: vision;
+}
+
+.about-values {
+  grid-area: values;
+  margin-top: 20px;
+}
+
+/* Stile migliorato per i titoli delle sezioni */
+.about-content-simplified h3 {
+  font-size: 1.7rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.about-content-simplified h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: var(--gold);
+}
+
+/* CTA centrato */
+.about-cta {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* Miglioramento tipografia e leggibilità */
+h3 {
+  font-size: clamp(1.5rem, 3vw, 1.8rem);
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--gold);
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+strong {
+  color: var(--gold);
+  font-weight: 500;
+}
+
+ul li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+}
+
+/* ========== MIGLIORAMENTI SEZIONE TEAM ========== */
+.team-section {
+  position: relative;
+  background-color: rgba(17, 17, 17, 0.7); /* Leggero contrasto con altre sezioni */
+}
+
+.team-section:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 20%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(203, 161, 53, 0.3), transparent);
+}
+
+.team-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.team-hero-image {
+  margin: 0 auto 60px;
+  max-width: 900px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+.team-hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.team-hero-caption {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  background-color: rgba(11, 11, 11, 0.85);
+  padding: 15px 30px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-left: 3px solid var(--gold);
+}
+
+.team-hero-caption span {
+  color: var(--gold);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+}
+
+/* Griglia team membri */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.team-member {
+  background-color: rgba(20, 20, 20, 0.5);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  border: 1px solid rgba(203, 161, 53, 0.1);
+  padding-bottom: 25px;
+}
+
+.team-member:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+  border-color: rgba(203, 161, 53, 0.3);
+}
+
+.team-image-container {
+  width: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+
+.team-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  transition: transform 0.6s ease;
+}
+
+.team-member:hover .team-image-container img {
+  transform: scale(1.05);
+}
+
+.team-member h3 {
+  margin: 0 25px 5px;
+  font-size: 1.6rem;
+}
+
+.team-position {
+  color: rgba(230, 201, 122, 0.9);
+  font-weight: 500;
+  margin: 0 25px 15px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.team-description {
+  min-height: 100px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  padding: 0 25px;
+  margin-bottom: 20px;
+}
+
+.team-social {
+  margin: 20px 25px 0;
+  display: flex;
+  gap: 15px;
+}
+
+.team-social a {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: rgba(203, 161, 53, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  color: var(--gold);
+}
+
+.team-social a:hover {
+  background-color: var(--gold);
+  color: var(--black);
+  transform: translateY(-3px);
+}
+
+/* ========== GRIGLIA DEI VALORI ========== */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin: 20px 0 30px;
+}
+
+.value-item {
+  background-color: rgba(20, 20, 20, 0.5);
+  border-radius: 8px;
+  padding: 25px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease, border-color 0.3s ease;
+  border: 1px solid rgba(203, 161, 53, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.value-item:hover {
+  transform: translateY(-7px);
+  border-color: rgba(230, 201, 122, 0.5);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+.value-item strong {
+  font-size: 1.2rem;
+  display: block;
+  margin-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.5px;
+}
+
+.value-item p {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ========== SEZIONE TESTIMONIANZE ========== */
+.testimonials-section {
+  position: relative;
+  background-color: var(--black-soft);
+}
+
+.testimonials-section:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 20%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(203, 161, 53, 0.3), transparent);
+}
+
+.testimonials-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin: 50px 0;
+}
+
+.testimonial-card {
+  background-color: rgba(20, 20, 20, 0.5);
+  border-radius: 10px;
+  padding: 30px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease, border-color 0.3s ease;
+  border: 1px solid rgba(203, 161, 53, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(230, 201, 122, 0.5);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.testimonial-stars {
+  margin-bottom: 20px;
+  color: var(--gold);
+}
+
+.testimonial-stars i {
+  margin-right: 5px;
+}
+
+.testimonial-content {
+  font-size: 1rem;
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 25px;
+  flex-grow: 1;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+}
+
+.testimonial-author img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+  border: 2px solid var(--gold);
+}
+
+.testimonial-author span {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.testimonial-author-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: auto;
+}
+
+.author-image {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 15px;
+}
+
+.author-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.author-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.author-info strong {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  font-family: 'Playfair Display', serif;
+}
+
+.author-info p {
+  font-size: 0.9rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.testimonials-cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* ========== RESPONSIVE DESIGN MIGLIORATO ========== */
+@media (max-width: 992px) {
+  .about-content-simplified {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "story"
+      "vision"
+      "values";
+    gap: 40px;
+  }
+  
+  .about-story, .about-vision-mission {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-section {
+    padding: 70px 0;
+  }
+  
+  .about-content-simplified {
+    gap: 30px;
+  }
+  
+  .about-story, .about-vision-mission, .about-values {
+    padding: 0 15px;
+  }
+  
+  .team-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .values-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .testimonial-content {
+    font-size: 0.95rem;
+  }
+  
+  .testimonial-author img {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .about-content-simplified h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .testimonial-card {
+    padding: 25px 20px;
+  }
+  
+  .testimonial-stars i {
+    font-size: 0.9rem;
+  }
+  
+  .testimonial-content {
+    font-size: 0.9rem;
+  }
+  
+  .value-item {
+    padding: 20px;
+  }
+  
+  .value-item strong {
+    font-size: 1.1rem;
+  }
+}

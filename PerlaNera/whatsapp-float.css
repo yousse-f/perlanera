@@ -1,0 +1,73 @@
+/* Stile per il pulsante WhatsApp flottante */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25D366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: #20ba5a;
+    color: #FFF;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Aggiunta di un'animazione pulsante per attirare l'attenzione */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+.whatsapp-float {
+    animation: pulse 2s infinite;
+}
+
+/* Adattamento per dispositivi mobili */
+@media (max-width: 480px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+        font-size: 26px;
+    }
+}
+
+/* 
+ISTRUZIONI PER PERSONALIZZAZIONI FUTURE:
+------------------------------------------------
+1. Per modificare la dimensione del pulsante:
+   Cambiare i valori di 'width' e 'height'
+   
+2. Per cambiare la posizione:
+   Modificare i valori di 'bottom' e 'right'
+   
+3. Per cambiare il colore:
+   Modificare 'background-color' (il verde standard di WhatsApp è #25D366)
+   
+4. Per modificare l'animazione:
+   Regolare le proprietà all'interno di @keyframes pulse
+   
+5. Per disattivare l'animazione:
+   Rimuovere la linea 'animation: pulse 2s infinite;'
+*/

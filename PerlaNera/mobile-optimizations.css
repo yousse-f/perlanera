@@ -1,0 +1,253 @@
+/* 
+   Perla Nera - Ottimizzazioni Mobile 
+   Aprile 2025
+*/
+
+/* =============== HEADER E MENU MOBILE =============== */
+@media (max-width: 768px) {
+    /* Stile migliorato per il pulsante hamburger */
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 22px;
+        position: relative;
+        z-index: 1001; /* Aumentato z-index per garantire cliccabilità */
+        margin-right: 10px;
+    }
+
+    /* Animazione delle linee del menu hamburger */
+    .menu-toggle span {
+        width: 100%;
+        height: 3px;
+        background-color: var(--gold);
+        border-radius: 3px;
+        transition: all 0.3s ease;
+    }
+    
+    /* Animazione del menu hamburger quando attivo */
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* Menu dropdown migliorato */
+    .nav-links {
+        position: fixed; /* Cambiato da absolute a fixed per coprire l'intera viewport */
+        top: 80px;
+        left: 0;
+        width: 100%;
+        height: auto;
+        background-color: rgba(11, 11, 11, 0.98); /* Aumentato opacità per migliore leggibilità */
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 0;
+        transform: translateY(-150%);
+        transition: transform 0.4s ease-in-out;
+        z-index: 1000;
+    }
+    
+    .nav-links.active {
+        transform: translateY(0);
+    }
+    
+    .nav-links li {
+        margin: 15px 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-links a {
+        display: block;
+        padding: 12px 0;
+        font-size: 1.2rem;
+        width: 100%;
+    }
+    
+    /* Riduzione dimensioni logo su mobile */
+    .logo img {
+        max-height: 55px;
+    }
+    
+    .brand-text {
+        font-size: 1.3rem;
+    }
+    
+    /* Header con altezza ridotta su mobile */
+    header {
+        max-height: 80px;
+    }
+    
+    nav {
+        height: 70px;
+        padding: 5px 15px;
+    }
+}
+
+/* =============== LAYOUT GENERALE =============== */
+@media (max-width: 768px) {
+    section {
+        padding: 60px 0; /* Riduzione padding verticale sezioni */
+    }
+    
+    .container {
+        width: 92%;
+        padding: 0 10px;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+    }
+    
+    .gold-divider {
+        margin-bottom: 30px;
+    }
+    
+    /* Hero section ottimizzata */
+    .hero, .hero-local {
+        height: 50vh;
+        margin-top: 70px;
+    }
+    
+    .hero h1, .hero-local h1 {
+        font-size: 2.2rem;
+        padding: 0 15px;
+    }
+    
+    .hero .subtitle, .hero-local .subtitle {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+}
+
+/* =============== TESTIMONIANZE =============== */
+/* Mantenuto il codice esistente con miglioramenti */
+@media (max-width: 992px) {
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .testimonial-card {
+        padding: 20px; /* Padding ridotto su tablet */
+    }
+}
+
+/* Nuovo breakpoint intermedio per schermi medio-piccoli */
+@media (max-width: 768px) {
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .testimonial-card {
+        padding: 15px;
+    }
+    
+    .testimonial-content {
+        font-size: 0.85rem;
+        margin-bottom: 20px;
+    }
+    
+    .testimonial-author img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 576px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .testimonial-card {
+        padding: 20px; /* Aumentato leggermente padding su mobile per migliore leggibilità */
+    }
+    
+    .testimonial-author img {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+/* =============== FOOTER =============== */
+@media (max-width: 768px) {
+    footer {
+        padding: 40px 0;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+    
+    .footer-logo {
+        margin: 0 auto 15px;
+        justify-content: center;
+    }
+    
+    .footer-logo img {
+        max-height: 60px;
+    }
+    
+    .footer-links {
+        justify-content: center;
+        gap: 15px;
+        margin: 0 auto;
+        max-width: 300px;
+    }
+    
+    /* Miglioramento dati aziendali su mobile */
+    .company-details {
+        margin: 10px auto;
+        line-height: 1.8; /* Aumentato line-height per maggiore leggibilità */
+    }
+    
+    .company-details p {
+        margin-bottom: 10px;
+    }
+    
+    .company-name {
+        font-size: 1.1rem;
+        margin-bottom: 12px !important;
+    }
+    
+    .contact-info a {
+        display: inline-block;
+        padding: 3px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .footer-links a {
+        padding: 8px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        width: 80%;
+        margin: 0 auto;
+    }
+    
+    .footer-links a:last-child {
+        border-bottom: none;
+    }
+    
+    .company-details {
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,98 @@
+/* 
+   Perla Nera - Stili per la sezione Testimonianze
+   Creato: Aprile 2025
+*/
+
+/* Griglia testimonianze - 4 colonne su desktop, 2 su tablet, 1 su mobile */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+}
+
+/* Card testimonial */
+.testimonial-card {
+    background-color: rgba(17, 17, 17, 0.5);
+    padding: 25px;
+    border-radius: 3px;
+    border: 1px solid rgba(203, 161, 53, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Effetto hover sulla card */
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border-color: rgba(203, 161, 53, 0.3);
+}
+
+/* Stelle di valutazione */
+.testimonial-stars {
+    color: #cba135; /* Colore oro */
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+/* Testo della testimonianza */
+.testimonial-content {
+    font-style: italic;
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Autore della testimonianza */
+.testimonial-author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Immagine dell'autore */
+.testimonial-author img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive: tablet */
+@media (max-width: 992px) {
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Responsive: mobile */
+@media (max-width: 576px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .testimonial-author img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/*
+   ISTRUZIONI PER PERSONALIZZAZIONI FUTURE:
+   ----------------------------------------
+   
+   1. Per modificare le dimensioni delle immagini di profilo:
+      Cambiare i valori width e height nella regola .testimonial-author img
+   
+   2. Per cambiare il layout della griglia:
+      Modificare grid-template-columns nella regola .testimonials-grid
+   
+   3. Per modificare l'aspetto delle card:
+      Aggiornare background-color, border e border-radius in .testimonial-card
+   
+   4. Per personalizzare il colore delle stelle:
+      Cambiare il valore color nella regola .testimonial-stars
+*/

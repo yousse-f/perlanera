@@ -1,0 +1,170 @@
+/* 
+   Perla Nera - Animazioni Eleganti
+   Aprile 2025
+   
+   Questo file contiene effetti di animazione premium 
+   per migliorare l'esperienza interattiva del sito.
+*/
+
+/* ========== CLASSI DI UTILITÀ PER SCROLL REVEAL ========== */
+
+/* Elemento inizialmente invisibile pronto per il reveal */
+.reveal-element {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Classe applicata quando l'elemento è visibile */
+.reveal-element.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Variante con ritardo per elementi in sequenza */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* Variante per titoli principali - più sottile */
+.reveal-title {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-title.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== HOVER EFFECTS PER CARD E BOX ========== */
+
+/* Hover effect per card servizi */
+.service-box {
+  transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
+              box-shadow 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
+              border-color 0.5s ease;
+}
+
+.service-box:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2),
+              0 5px 15px rgba(203, 161, 53, 0.1);
+  border-color: #e6c97a;
+}
+
+/* Effetto su icone nei box servizi */
+.service-box i {
+  transition: transform 0.4s ease, color 0.4s ease;
+}
+
+.service-box:hover i {
+  transform: scale(1.1);
+  color: #e6c97a; /* Oro più luminoso all'hover */
+}
+
+/* Hover effect per testimonianze */
+.testimonial-card {
+  transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
+              box-shadow 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
+              border-color 0.5s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25),
+              0 5px 15px rgba(203, 161, 53, 0.15);
+  border-color: #e6c97a;
+}
+
+/* Effetto sulle stelle nelle testimonianze */
+.testimonial-card .testimonial-stars {
+  transition: transform 0.4s ease;
+}
+
+.testimonial-card:hover .testimonial-stars {
+  transform: scale(1.05);
+}
+
+/* ========== ANIMAZIONI SUPPLEMENTARI ========== */
+
+/* Pulsazione sottile per CTA primari */
+.btn.btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn.btn-primary:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid transparent;
+  border-radius: 2px;
+  animation: pulse-border 2s infinite;
+  opacity: 0;
+}
+
+@keyframes pulse-border {
+  0% {
+    transform: scale(1);
+    border-color: rgba(230, 201, 122, 0);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(1.05);
+    border-color: rgba(230, 201, 122, 0.5);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.1);
+    border-color: rgba(230, 201, 122, 0);
+    opacity: 0;
+  }
+}
+
+/* Animazione dei divider dorati */
+.gold-divider {
+  position: relative;
+  overflow: hidden;
+}
+
+.gold-divider:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.3), 
+    transparent);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  20% { left: 100%; }
+  100% { left: 100%; }
+}
+
+/* ========== MEDIA QUERIES PER RESPONSIVE ========== */
+
+@media (max-width: 768px) {
+  /* Hover effects disattivati su dispositivi touch per performance */
+  .service-box:hover,
+  .testimonial-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  
+  /* Animazioni più veloci su mobile */
+  .reveal-element {
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+}
